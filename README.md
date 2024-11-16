@@ -1,6 +1,6 @@
 # Aplicação de Vídeo com React Native e Expo
 
-Este projeto é uma aplicação de listagem e reprodução de vídeos desenvolvida em React Native utilizando Expo. A aplicação permite que os usuários naveguem entre diferentes telas, reproduzam vídeos usando HLS, realizem chamadas de API que retornam conteúdo dinamicamente utilizando um servidor JSON simulado com `json-server`, incluam skeletons e pequenas animações para melhorar a experiência do usuário.
+Este projeto é uma aplicação de listagem e reprodução de vídeos desenvolvida em React Native utilizando Expo. A aplicação permite que os usuários naveguem entre diferentes telas, reproduzam vídeos usando HLS, realizem chamadas de API que retornam conteúdo dinamicamente utilizando um servidor JSON simulado com `json-server`, e pequenas animações para melhorar a experiência do usuário.
 
 ## Índice
 
@@ -79,7 +79,6 @@ npx expo install @react-navigation/native @react-navigation/native-stack
 npx expo install react-native-screens react-native-safe-area-context
 npx expo install expo-av
 npx expo install react-native-reanimated react-native-gesture-handler
-npm install react-native-skeleton-placeholder
 npm install axios
 npm install --save-dev jest @testing-library/react-native @testing-library/jest-native
 
@@ -207,10 +206,6 @@ A estrutura de pastas do projeto é a seguinte:
    - Exibe título, descrição, número de views e likes.
    - Permite incrementar likes e views.
 
-- **Skeleton Loading:**
-
-   - Mostra skeletons enquanto os dados são carregados.
-
 - **Animações:**
 
    - Animação de transição entre telas.
@@ -235,7 +230,6 @@ npm run test
 - axios: Cliente HTTP para realizar requisições à API.
 - json-server: Simula uma API REST.
 - expo-av: Reprodução de áudio e vídeo.
-- react-native-skeleton-placeholder: Skeleton loading.
 - react-native-reanimated: Animações.
 - Jest: Framework de testes.
 - React Native Testing Library: Utilitários para testes de componentes.
