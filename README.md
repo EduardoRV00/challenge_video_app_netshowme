@@ -7,8 +7,9 @@ Este projeto é uma aplicação de listagem e reprodução de vídeos desenvolvi
 ![Texto Alternativo](./assets/prints/IMG-20241115-WA0076.jpg)
 ![Texto Alternativo](./assets/prints/IMG-20241115-WA0077.jpg)
 ![Texto Alternativo](./assets/prints/IMG-20241115-WA0078.jpg)
-![Texto Alternativo](./assets/prints/IMG-20241115-WA0079.jpg)
 ![Texto Alternativo](./assets/prints/IMG-20241115-WA0080.jpg)
+![Texto Alternativo](./assets/prints/IMG-20241115-WA0079.jpg)
+
 
 
 ## Índice
