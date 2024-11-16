@@ -8,8 +8,9 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "test": "jest",
-    "test:watch": "jest --watchAll"
+    "server": "json-server --watch db.json --port 3000",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "test": "jest"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^2.1.0",
