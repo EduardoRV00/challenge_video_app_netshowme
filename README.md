@@ -2,6 +2,15 @@
 
 Este projeto é uma aplicação de listagem e reprodução de vídeos desenvolvida em React Native utilizando Expo. A aplicação permite que os usuários naveguem entre diferentes telas, reproduzam vídeos usando HLS, realizem chamadas de API que retornam conteúdo dinamicamente utilizando um servidor JSON simulado com `json-server`, e pequenas animações para melhorar a experiência do usuário.
 
+## Prints do App
+
+![Texto Alternativo](./assets/prints/IMG-20241115-WA0076.jpg)
+![Texto Alternativo](./assets/prints/IMG-20241115-WA0077.jpg)
+![Texto Alternativo](./assets/prints/IMG-20241115-WA0078.jpg)
+![Texto Alternativo](./assets/prints/IMG-20241115-WA0079.jpg)
+![Texto Alternativo](./assets/prints/IMG-20241115-WA0080.jpg)
+
+
 ## Índice
 
 - [Aplicação de Vídeo com React Native e Expo](#aplicação-de-vídeo-com-react-native-e-expo)
