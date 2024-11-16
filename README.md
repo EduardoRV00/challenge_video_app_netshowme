@@ -178,8 +178,6 @@ A estrutura de pastas do projeto é a seguinte:
 │   ├── navigation/         # Configuração de navegação
 │   ├── screens/            # Telas do app (Home, Video Detail)
 │   ├── services/           # Serviços (ex: chamadas de API)
-│   ├── store/              # Gerenciamento de estado (Redux, Context API, etc.)
-│   └── utils/              # Utilitários, funções auxiliares
 
 ```
 
@@ -190,7 +188,6 @@ A estrutura de pastas do projeto é a seguinte:
 - navigation/: Configurações de navegação.
 - screens/: Telas da aplicação (Home, Video Detail).
 - services/: Interações com a API (axios).
-- store/: Gerenciamento de estado (opcional).
 
 
 ## Funcionalidades Implementadas
