@@ -1,6 +1,53 @@
 {
-  "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
-  }
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "src/*"
+      ],
+      "@testing-library/*": [
+        "node_modules/@testing-library/*"
+      ],
+    },
+    "types": [
+      "react",
+      "react-native",
+      "jest",
+      "@react-navigation/native",
+      "@react-navigation/native-stack"
+    ],
+    "jsx": "react-jsx",
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "target": "esnext",
+    "module": "commonjs",
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "outDir": "./build",
+  },
+  "include": [
+    "src/**/*",
+    "types/**/*.d.ts",
+    "./src",
+  ],
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js",
+    "**/__mocks__/*",
+    "**/__tests__/*",
+    "**/__rsc_tests__/*",
+    "build"
+  ],
+  "extends": "expo/tsconfig.base"
 }

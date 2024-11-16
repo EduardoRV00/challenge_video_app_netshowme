@@ -12,6 +12,12 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "plugins": [
+      "react-native-video"
+    ],
+    "reactNative": {
+      "bridge": true
+    },
     "ios": {
       "supportsTablet": true
     },
