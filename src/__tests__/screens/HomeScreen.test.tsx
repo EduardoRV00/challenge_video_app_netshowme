@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, waitFor } from '@testing-library/react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import HomeScreen from '../../screens/HomeScreen';
+import HomeScreen from '../../screens/home/HomeScreen';
 import { VideosContext } from '../../context/VideosContext';
 import { act } from 'react-test-renderer';
 
@@ -21,11 +21,17 @@ describe('HomeScreen', () => {
         likes: 5,
       },
     ],
-    fetchVideos: jest.fn().mockResolvedValue(true), // Mock para simular sucesso na busca
+    fetchVideos: jest.fn().mockResolvedValue(true), // Simula sucesso
+    fetchCategories: jest.fn().mockResolvedValue([
+      { id: '1', title: 'Over The Cast' },
+      { id: '2', title: 'Flow Experience 2021' },
+      { id: '3', title: 'Netshow.me Talks' },
+    ]), // Simula as categorias
     fetchVideoById: jest.fn(),
     incrementLikes: jest.fn(),
     incrementViews: jest.fn(),
   };
+
 
   it('deve renderizar os vídeos da lista', async () => {
     const { getByText } = render(
@@ -45,6 +51,32 @@ describe('HomeScreen', () => {
       // Verifique se os textos do vídeo são exibidos
       expect(getByText('Test Video 1')).toBeTruthy();
       expect(getByText('Test description')).toBeTruthy();
+    });
+  });
+
+  it('deve renderizar os vídeos e categorias corretamente', async () => {
+    const { getByText } = render(
+      <VideosContext.Provider value={mockContext}>
+        <NavigationContainer>
+          <HomeScreen />
+        </NavigationContainer>
+      </VideosContext.Provider>
+    );
+
+    await act(async () => {
+      await mockContext.fetchVideos();
+      await mockContext.fetchCategories();
+    });
+
+    await waitFor(() => {
+      // Verifica os vídeos
+      expect(getByText('Test Video 1')).toBeTruthy();
+      expect(getByText('Test description')).toBeTruthy();
+
+      // Verifica as categorias
+      expect(getByText('Over The Cast')).toBeTruthy();
+      expect(getByText('Flow Experience 2021')).toBeTruthy();
+      expect(getByText('Netshow.me Talks')).toBeTruthy();
     });
   });
 });

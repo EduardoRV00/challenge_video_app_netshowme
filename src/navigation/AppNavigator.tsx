@@ -1,13 +1,15 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from '../screens/HomeScreen';
-import VideoDetailsScreen from '../screens/VideoDetailsScreen';
+import HomeScreen from '../screens/home/HomeScreen';
+import VideoDetailsScreen from '../screens/home/VideoDetailsScreen';
 import { RouteProp } from '@react-navigation/native';
+import LiveStreamScreen from '../screens/live_stream/LiveStreamScreen';
 
 export type RootStackParamList = {
-  Home: undefined;
-  VideoDetail: { videoId: string; title: string };
+  Home: undefined; // Tela inicial
+  VideoDetail: { videoId: string; title: string }; // Tela de detalhes do vídeo
+  LiveStream: undefined; // Tela para funcionalidade de transmissão ao vivo
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -19,7 +21,7 @@ const AppNavigator: React.FC = () => {
         initialRouteName="Home"
         screenOptions={{
           headerStyle: {
-            backgroundColor: '#274F67',
+            backgroundColor: '#EE3965',
           },
           headerTintColor: '#fff',
           headerTitleStyle: {
@@ -39,6 +41,11 @@ const AppNavigator: React.FC = () => {
           options={({ route }: { route: RouteProp<RootStackParamList, 'VideoDetail'> }) => ({
             title: `Vídeo: ${route.params.title}`,
           })}
+        />
+        <Stack.Screen
+          name="LiveStream"
+          component={LiveStreamScreen}
+          options={{ title: 'Transmissão ao Vivo' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

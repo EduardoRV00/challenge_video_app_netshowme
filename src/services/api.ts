@@ -4,8 +4,8 @@ const API_BASE_URL = "http://192.168.1.6:3000";
 
 export const api = {
     // Busca vídeos com suporte à paginação
-    fetchVideos: async (page = 1, limit = 10): Promise<Video[]> => {
-        const url = `${API_BASE_URL}/videos?_page=${page}&_limit=${limit}`;
+    fetchVideos: async (page = 1, limit = 10, query = '', category = ''): Promise<Video[]> => {
+        const url = `${API_BASE_URL}/videos?_page=${page}&_limit=${limit}&q=${query}&category_like=${category}`;
         try {
             console.log(`[API] Buscando vídeos na URL: ${url}`);
             const response = await fetch(url);
@@ -15,13 +15,14 @@ export const api = {
             }
 
             const data = await response.json();
-            console.log(`[API] Dados recebidos:`, data);
+            console.log(`[API] Vídeos recebidos:`, data);
             return data;
         } catch (error) {
             console.error(`[API] Erro ao buscar vídeos:`, error);
             throw new Error('Erro ao buscar vídeos. Por favor, tente novamente.');
         }
     },
+
 
     // Busca um vídeo específico pelo ID
     fetchVideoById: async (id: string): Promise<Video> => {
@@ -68,4 +69,29 @@ export const api = {
             throw new Error('Erro ao atualizar dados. Por favor, tente novamente.');
         }
     },
+    /**
+  * Busca categorias da API.
+  * @returns {Promise<Array<{ id: string; title: string }>>} Lista de categorias.
+  */
+    fetchCategories: async (): Promise<Array<{ id: string; title: string }>> => {
+        const API_BASE_URL = 'http://192.168.1.6:3000';
+        const url = `${API_BASE_URL}/categories`;
+
+        try {
+            console.log(`[API] Buscando categorias na URL: ${url}`);
+            const response = await fetch(url);
+
+            if (!response.ok) {
+                throw new Error(`[API] Erro ao buscar categorias: ${response.statusText}`);
+            }
+
+            const data = await response.json();
+            console.log('[API] Categorias recebidas:', data);
+            return data;
+        } catch (error) {
+            console.error('[API] Erro ao buscar categorias:', error);
+            throw new Error('Erro ao buscar categorias. Tente novamente.');
+        }
+    },
+
 };

@@ -25,7 +25,9 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [],
+      "package": "com.anonymous.video_app_netshowme"
     },
     "web": {
       "favicon": "./assets/favicon.png"
